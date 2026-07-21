@@ -84,7 +84,7 @@ function renderCard(row) {
   const fragment = cardTemplate.content.cloneNode(true);
   const card = fragment.querySelector(".card");
   card.dataset.kind = row.kind;
-  card.dataset.live = row.live;
+  card.dataset.activity = row.reported;
   card.dataset.blocked = String(Boolean(row.blocked_by));
   setText(card, ".card-id", row.id);
   setText(card, ".card-area", row.area);
@@ -96,10 +96,17 @@ function renderCard(row) {
   if (!row.agent || row.agent === "None") card.querySelector(".card-agent").closest("div").hidden = true;
   if (!row.blocked_by) card.querySelector(".card-blocker").closest("div").hidden = true;
 
-  const liveState = card.querySelector(".live-state");
-  const state = row.live || "idle";
-  liveState.dataset.state = state;
-  setText(card, ".live-label", state === "working" ? "Working now" : state === "blocked" ? "Blocked" : "Idle");
+  const activityState = card.querySelector(".activity-state");
+  const state = row.reported || "idle";
+  activityState.dataset.state = state;
+  setText(card, ".activity-label", state === "working" ? "Reported working" : state === "blocked" ? "Reported blocked" : "Reported idle");
+  const activityTime = card.querySelector(".activity-time");
+  if (row.updated_at) {
+    activityTime.dateTime = `${row.updated_at.replace(" ", "T")}Z`;
+    activityTime.textContent = `${row.updated_at.slice(5)} UTC`;
+  } else {
+    activityTime.hidden = true;
+  }
 
   const link = card.querySelector(".card-link");
   if (row.link) {

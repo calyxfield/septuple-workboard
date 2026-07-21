@@ -41,7 +41,7 @@ h1 { margin: 0; font-size: 1.125rem; line-height: 1.2; }
 .topbar nav > a:hover, .topbar nav > a:focus-visible { text-decoration: underline; text-underline-offset: 0.1875rem; }
 .sync-state { display: inline-flex; align-items: center; gap: 0.4375rem; color: var(--muted); font-family: var(--mono); font-size: 0.625rem; }
 
-.pulse, .live-dot {
+.pulse, .activity-dot {
   width: 0.5rem;
   height: 0.5rem;
   flex: 0 0 auto;
@@ -130,7 +130,7 @@ main { padding: 0.625rem; }
   background: white;
   box-shadow: 0 0.0625rem 0.0625rem rgb(9 30 66 / 12%);
 }
-.card[data-live="working"] { border-left: 0.25rem solid var(--green); }
+.card[data-activity="working"] { border-left: 0.25rem solid var(--green); }
 .card[data-blocked="true"] { border-left: 0.25rem solid var(--red); }
 
 .card-header { display: flex; justify-content: space-between; gap: 0.5rem; padding: 0.5rem 0.5625rem 0; color: var(--muted); font: 600 0.625rem/1.2 var(--mono); }
@@ -147,11 +147,14 @@ main { padding: 0.625rem; }
 .card-facts dt { color: var(--muted); }
 .card-facts dd { padding-left: 0; overflow-wrap: anywhere; }
 
-.card-footer { min-height: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding: 0.375rem 0.5625rem; border-top: 0.0625rem solid #e3e6ea; }
-.live-state { display: inline-flex; align-items: center; gap: 0.375rem; color: var(--muted); font: 650 0.625rem/1 var(--mono); text-transform: uppercase; }
-.live-state[data-state="idle"] .live-dot { background: #9ba3af; }
-.live-state[data-state="blocked"] .live-dot { background: var(--red); }
-.live-state[data-state="working"] { color: var(--green); }
+.card-footer { min-height: 2.75rem; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding: 0.375rem 0.5625rem; border-top: 0.0625rem solid #e3e6ea; }
+.activity-state { display: grid; grid-template-columns: 0.5rem auto; align-items: center; gap: 0.375rem; color: var(--muted); font: 650 0.625rem/1 var(--mono); }
+.activity-copy { display: grid; gap: 0.1875rem; }
+.activity-label { text-transform: uppercase; }
+.activity-time { color: var(--muted); font-weight: 600; }
+.activity-state[data-state="idle"] .activity-dot { background: #9ba3af; }
+.activity-state[data-state="blocked"] .activity-dot { background: var(--red); }
+.activity-state[data-state="working"] .activity-label { color: var(--green); }
 .card-link { font-size: 0.625rem; font-weight: 700; text-underline-offset: 0.125rem; }
 .card-link[hidden] { display: none; }
 

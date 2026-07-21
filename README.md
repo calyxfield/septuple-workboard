@@ -4,7 +4,7 @@ A public, CSV-backed Kanban board for Septuple product work.
 
 Published at <https://calyxfield.github.io/septuple-workboard/>.
 
-`work.csv` is the canonical ledger. The static site polls it every 20 seconds and exposes the same file for download. “Working now” is an explicit maintained state, not an inference from private process activity.
+`work.csv` is the canonical ledger. The static site polls it every 20 seconds and exposes the same file for download. Each card shows its last reported activity and row timestamp; the board is not connected to agent runtime telemetry.
 
 ## Updating the board
 
@@ -18,6 +18,6 @@ Allowed `stage` values are:
 - `Review`
 - `Done`
 
-Allowed `live` values are `working`, `idle`, and `blocked`.
+Allowed `reported` values are `working`, `idle`, and `blocked`.
 
 `Feature ideas` is reserved for work without a pull request. Move a card to `In progress` when implementation starts and to `Review` when its pull request is ready for a decision.
