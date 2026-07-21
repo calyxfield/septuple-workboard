@@ -155,8 +155,9 @@ main { padding: 0.625rem; }
 .activity-state[data-state="idle"] .activity-dot { background: #9ba3af; }
 .activity-state[data-state="blocked"] .activity-dot { background: var(--red); }
 .activity-state[data-state="working"] .activity-label { color: var(--green); }
-.card-link { font-size: 0.625rem; font-weight: 700; text-underline-offset: 0.125rem; }
-.card-link[hidden] { display: none; }
+.card-links { display: grid; gap: 0.1875rem; justify-items: end; }
+.card-links a { font-size: 0.625rem; font-weight: 700; text-underline-offset: 0.125rem; }
+.card-links a[hidden] { display: none; }
 
 .empty-state, .load-error { padding: 1.5rem; border: 0.0625rem solid var(--line); text-align: center; }
 .load-error { background: #ffebe6; color: var(--red); }

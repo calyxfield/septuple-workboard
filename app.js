@@ -115,6 +115,12 @@ function renderCard(row) {
   } else {
     link.hidden = true;
   }
+  const previewLink = card.querySelector(".preview-link");
+  if (row.preview) {
+    previewLink.href = row.preview;
+  } else {
+    previewLink.hidden = true;
+  }
   return fragment;
 }
 

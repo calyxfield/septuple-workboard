@@ -21,3 +21,5 @@ Allowed `stage` values are:
 Allowed `reported` values are `working`, `idle`, and `blocked`.
 
 `Feature ideas` is reserved for work without a pull request. Move a card to `In progress` when implementation starts and to `Review` when its pull request is ready for a decision.
+
+Use `link` for the canonical pull request or discussion and `preview` for an immutable review deployment when one exists.
