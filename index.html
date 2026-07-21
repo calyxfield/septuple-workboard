@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Live work ledger for Septuple development">
+    <link rel="icon" href="data:,">
+    <title>Septuple Workboard</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Septuple workboard</h1>
+      <nav aria-label="Board actions">
+        <span class="sync-state" aria-live="polite"><span class="pulse" aria-hidden="true"></span><span id="sync-label">Loading…</span></span>
+        <a href="https://discord.com/channels/1406366272404586536/1529149416811003994">Claim a task</a>
+        <a href="work.csv" download>CSV</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="filters" aria-label="Board filters">
+        <label>
+          <span>Search</span>
+          <input id="search" type="search" placeholder="Task, owner, blocker…" autocomplete="off">
+        </label>
+        <label>
+          <span>Area</span>
+          <select id="area-filter"><option value="">All areas</option></select>
+        </label>
+        <label>
+          <span>Owner</span>
+          <select id="owner-filter"><option value="">Everyone</option></select>
+        </label>
+        <button id="clear-filters" class="text-button" type="button">Clear filters</button>
+      </section>
+
+      <section id="board" class="board" aria-label="Septuple tasks"></section>
+      <p id="empty-state" class="empty-state" hidden>No cards match those filters.</p>
+    </main>
+
+    <template id="column-template">
+      <section class="column">
+        <header class="column-header">
+          <div>
+            <h2 class="column-title"></h2>
+          </div>
+          <span class="column-count"></span>
+        </header>
+        <div class="card-stack"></div>
+      </section>
+    </template>
+
+    <template id="card-template">
+      <article class="card">
+        <header class="card-header">
+          <span class="card-id"></span>
+          <span class="card-area"></span>
+        </header>
+        <h3 class="card-title"></h3>
+        <p class="card-summary"></p>
+        <dl class="card-facts">
+          <div><dt>Owner</dt><dd class="card-owner"></dd></div>
+          <div><dt>Agent</dt><dd class="card-agent"></dd></div>
+          <div><dt>Blocked by</dt><dd class="card-blocker"></dd></div>
+        </dl>
+        <footer class="card-footer">
+          <span class="live-state"><span class="live-dot" aria-hidden="true"></span><span class="live-label"></span></span>
+          <a class="card-link" target="_blank" rel="noreferrer">Open</a>
+        </footer>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
