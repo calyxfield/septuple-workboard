@@ -1,5 +1,5 @@
 id,area,title,kind,stage,owner,agent,live,blocked_by,link,updated_at,summary
-WB-001,Operations,Publish the Septuple workboard,Feature,In progress,Calyx,Calyx,working,,https://discord.com/channels/1406366272404586536/1529149416811003994,2026-07-21 17:20,"Build the shared claim board and keep its task state current."
+WB-001,Operations,Publish the Septuple workboard,Feature,Done,Calyx,Calyx,idle,,https://discord.com/channels/1406366272404586536/1529149416811003994,2026-07-21 17:38,"Build the shared claim board and keep its task state current."
 #60,Editor,Make malformed rule recovery explicit,Pull request,Done,Calyx,Calyx,idle,,https://github.com/syzygy137/funpuzzles/pull/60,2026-07-21 17:33,"Shorten the missing-direction error and prove the editor recovers without a reload."
 #58,Research,Measure solver strategies across every level,Pull request,In progress,Calyx,Pauli,idle,Exact and instrumented LLM runs,https://github.com/syzygy137/funpuzzles/pull/58,2026-07-21 12:32,"Compare fixed-work search methods with reproducible counts and uncertainty."
 #59,Tutorial,Replace the tutorial set with Pattern Machine,Pull request,Review,Calyx,Calyx,idle,Tutorial curriculum decision,https://github.com/syzygy137/funpuzzles/pull/59,2026-07-21 16:14,"Teach the intact rule first and separate later syntax into concept-sized checkpoints."
